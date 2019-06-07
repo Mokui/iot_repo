@@ -3,6 +3,8 @@
 # Edit at https://www.gitignore.io/?templates=node,visualstudiocode
 
 package.json
+package-lock.json
+.remote-sync.json
 
 ### Node ###
 # Logs
