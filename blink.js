@@ -1,6 +1,8 @@
 var Gpio = require("onoff").Gpio; //include onoff to interact with the GPIO
-var LED = new Gpio(4, "out"); //use GPIO pin 4, and specify that it is output
-var blinkInterval = setInterval(blinkLED, 250); //run the blinkLED function every 250ms
+var LED = new Gpio(24, "out"); //use GPIO pin 24, and specify that it is output
+var frequency = 4;
+var beat = (1/frequency)*1000;
+var blinkInterval = setInterval(blinkLED, beat); //run the blinkLED function every 250ms
 
 function blinkLED() {
   //function to start blinking
@@ -19,4 +21,4 @@ function endBlink() {
   LED.unexport(); // Unexport GPIO to free resources
 }
 
-setTimeout(endBlink, 5000); //stop blinking after 5 seconds
+setTimeout(endBlink, 30000); //stop blinking after 5 seconds
